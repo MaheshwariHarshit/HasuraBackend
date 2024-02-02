@@ -1,0 +1,13 @@
+table:
+  name: order
+  schema: public
+object_relationships:
+  - name: Buyer
+    using:
+      foreign_key_constraint_on: buyer_id
+  - name: product
+    using:
+      foreign_key_constraint_on: product_id
+  - name: seller
+    using:
+      foreign_key_constraint_on: seller_id

@@ -1,0 +1,22 @@
+table:
+  name: product
+  schema: public
+object_relationships:
+  - name: product_variant
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: product_variant
+          schema: public
+  - name: seller
+    using:
+      foreign_key_constraint_on: seller_id
+array_relationships:
+  - name: orders
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: order
+          schema: public
